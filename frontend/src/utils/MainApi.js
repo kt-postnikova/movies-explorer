@@ -1,7 +1,6 @@
 const getResponse = response => response.ok ? response.json() : Promise.reject(`Ошибка ${response.status}`)
 
-// const API_URL = 'http://localhost:3000';
-const API_URL = 'https://api.movie-explorer.nomoredomains.rocks';
+const API_URL = 'http://localhost:3000';
 
 export const register = (email, password, name) => {
     return fetch(`${API_URL}/signup`, {
