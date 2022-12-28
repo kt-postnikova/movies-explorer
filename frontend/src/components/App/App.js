@@ -12,6 +12,7 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import * as MainApi from '../../utils/MainApi';
 import { CurrentUserContext } from '../../context/CurrentUserContext';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import ProtectedRoute from '../ProtectedRoute';
 
 function App() {
   const [message, setMessage] = React.useState('');
@@ -155,14 +156,21 @@ function App() {
           <Main loggedIn={loggedIn}></Main>
           <Footer></Footer>
         </Route>
-        <Route path="/movies">
+        <ProtectedRoute path="/movies"
+          component={Movies}
+          savedMovies={savedMovies}
+          loggedIn={loggedIn}
+          onSave={handleSaveMovies}
+          onDelete={handleDeleteMovies}
+        />
+        {/* <Route path="/movies">
           <Movies
             savedMovies={savedMovies}
             loggedIn={loggedIn}
             onSave={handleSaveMovies}
             onDelete={handleDeleteMovies}>
           </Movies>
-        </Route>
+        </Route> */}
         <Route path="/saved-movies">
           <SavedMovies
             savedMovies={savedMovies}
