@@ -171,8 +171,17 @@ function App() {
           onSave={handleSaveMovies}
           onDelete={handleDeleteMovies}
         />
+        {/* <Route path="/movies">
+          <Movies
+            savedMovies={savedMovies}
+            loggedIn={loggedIn}
+            onSave={handleSaveMovies}
+            onDelete={handleDeleteMovies}>
+          </Movies>
+        </Route> */}
         <ProtectedRoute path="/saved-movies"
           component={SavedMovies}
+          savedMovies={savedMovies}
           onDelete={handleDeleteMovies}
           loggedIn={loggedIn}
         />
@@ -183,6 +192,14 @@ function App() {
           onSignOut={signOut}
           message={message}
         />
+        {/* <Route path="/profile">
+          <Profile
+            loggedIn={loggedIn}
+            onEditProfile={handleEditUserInfo}
+            onSignOut={signOut}
+            message={message}>
+          </Profile>
+        </Route> */}
         <Route path="*">
           <PageNotFound />
         </Route>
