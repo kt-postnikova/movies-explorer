@@ -156,36 +156,6 @@ function App() {
           <Main loggedIn={loggedIn}></Main>
           <Footer></Footer>
         </Route>
-        <ProtectedRoute path="/movies"
-          component={Movies}
-          savedMovies={savedMovies}
-          loggedIn={loggedIn}
-          onSave={handleSaveMovies}
-          onDelete={handleDeleteMovies}
-        />
-        {/* <Route path="/movies">
-          <Movies
-            savedMovies={savedMovies}
-            loggedIn={loggedIn}
-            onSave={handleSaveMovies}
-            onDelete={handleDeleteMovies}>
-          </Movies>
-        </Route> */}
-        <Route path="/saved-movies">
-          <SavedMovies
-            savedMovies={savedMovies}
-            onDelete={handleDeleteMovies}
-            loggedIn={loggedIn}>
-          </SavedMovies>
-        </Route>
-        <Route path="/profile">
-          <Profile
-            loggedIn={loggedIn}
-            onEditProfile={handleEditUserInfo}
-            onSignOut={signOut}
-            message={message}>
-          </Profile>
-        </Route>
         <Route path="/signin">
           {loggedIn && <Redirect to="/movies"></Redirect>}
           <Login onLogin={handleAuthSubmit} message={message} error={error}></Login>
@@ -194,6 +164,25 @@ function App() {
           {loggedIn && <Redirect to="/movies"></Redirect>}
           <Register onRegister={handleRegisterSubmit} message={message} error={error}></Register>
         </Route>
+        <ProtectedRoute path="/movies"
+          component={Movies}
+          savedMovies={savedMovies}
+          loggedIn={loggedIn}
+          onSave={handleSaveMovies}
+          onDelete={handleDeleteMovies}
+        />
+        <ProtectedRoute path="/saved-movies"
+          component={SavedMovies}
+          onDelete={handleDeleteMovies}
+          loggedIn={loggedIn}
+        />
+        <ProtectedRoute path="/profile"
+          component={Profile}
+          loggedIn={loggedIn}
+          onEditProfile={handleEditUserInfo}
+          onSignOut={signOut}
+          message={message}
+        />
         <Route path="*">
           <PageNotFound />
         </Route>
