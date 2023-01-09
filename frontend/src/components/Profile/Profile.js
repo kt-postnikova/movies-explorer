@@ -44,7 +44,7 @@ function Profile({ onEditProfile, loggedIn, onSignOut, message }) {
             <Header loggedIn={loggedIn}></Header>
             <div className="profile container">
                 <h1 className="profile__title">Привет, {currentUser.name}!</h1>
-                <form className="form" onSubmit={handleRegisterSubmit} >
+                <form className="form" onSubmit={handleRegisterSubmit} id="form-profile">
                     <label className="profile__label">
                         <span className="profile__name">Имя</span>
                         <input className="profile__input" value={values.name} onChange={handleChange} name="name" type="text" minLength="2" maxLength="30" />
@@ -57,10 +57,10 @@ function Profile({ onEditProfile, loggedIn, onSignOut, message }) {
                     </label>
                     <span className="profile__input-error">{errors.email}</span>
                     <p className="profile__message">{message}</p>
-                    <button className="profile__button" disabled={isValid ? null : 'disabled'}>Редактировать</button>
+                    <button className="profile__button" id="button-profile" disabled={isValid ? null : 'disabled'}>Редактировать</button>
                 </form>
                 <Link className="signout-button" to="/">
-                    <button className="signout-button" onClick={onSignOut}>Выйти из аккаунта</button>
+                    <button className="signout-button" id="button-signout" onClick={onSignOut}>Выйти из аккаунта</button>
                 </Link>
             </div >
         </>

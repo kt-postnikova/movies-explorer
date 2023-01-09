@@ -10,7 +10,7 @@ function Promo(params) {
                     <div className="promo__info">
                         <h1 className="promo__header">Учебный проект студента факультета Веб-разработки.</h1>
                         <p className="promo__subheader">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
-                        <button className="promo__button">Узнать больше</button>
+                        <button className="promo__button" id="button-promo" >Узнать больше</button>
                     </div>
                 </div>
             </div>

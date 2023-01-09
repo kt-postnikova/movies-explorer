@@ -68,7 +68,7 @@ function MoviesCardList({ moviesList, savedMovies, noQuery, noMovies, isLoading,
                                             moviesList &&
                                             (!(moviesList.length === 0 || moviesList.length <= moviesCount)) &&
                                             <div className="movies-cards__button-container">
-                                                <button className="movies-cards__button" onClick={handleMoviesSetMore}>Ещё</button>
+                                                <button className="movies-cards__button" id="button-movie-cards" onClick={handleMoviesSetMore}>Ещё</button>
                                             </div>
                                         }
                                     </div>

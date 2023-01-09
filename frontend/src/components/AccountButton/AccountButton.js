@@ -7,7 +7,7 @@ function AccountButton(params) {
     return (
         <div className="account-button">
             <Link to="/profile" className="account-button__link">Аккаунт
-                <button className="account-button__button">
+                <button className="account-button__button" id="account-button">
                     <img className="account-button__button-image" src={accountImage} alt="Иконка аккаунта" />
                 </button>
             </Link>

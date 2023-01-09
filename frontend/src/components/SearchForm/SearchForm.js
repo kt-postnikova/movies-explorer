@@ -12,10 +12,10 @@ function SearchForm({ onSubmit, onChange, query }) {
 
     return (
         <section className="search-form container">
-            <form className="search-form__container" onSubmit={handleSubmit} noValidate>
+            <form className="search-form__container" id="form-search" onSubmit={handleSubmit} noValidate>
                 <img className="search-form__search-image" src={searchImage} alt="Иконка лупа" />
                 <input className="search-form__input" placeholder="Фильм" type="text" value={query} onChange={onChange} required />
-                <button className="search-form__find-image"><img src={findImage} alt="Иконка стрелка" /></button>
+                <button className="search-form__find-image" id="button-search"><img src={findImage} alt="Иконка стрелка" /></button>
             </form>
             <div className="line"></div>
         </section>
