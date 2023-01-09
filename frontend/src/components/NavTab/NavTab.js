@@ -6,7 +6,7 @@ function NavTab(params) {
     return (
         <div className="navtab">
             <Link to="/signup" className="navtab__link">Регистрация</Link>
-            <Link to="/signin"><button className="navtab__button">Войти</button></Link>
+            <Link to="/signin"><button className="navtab__button" id="button-signin">Войти</button></Link>
         </div>
     )
 }
